@@ -18,7 +18,7 @@ extern crate alloc;
 use alloc::vec;
 
 #[no_mangle]
-pub unsafe extern "system"  fn DriverEntry(
+pub unsafe extern "system" fn DriverEntry(
     driver_object: &mut DRIVER_OBJECT,
     _reg_path: *const UNICODE_STRING,
 ) -> NTSTATUS {
@@ -32,7 +32,6 @@ pub unsafe extern "system"  fn DriverEntry(
 
     kernel_print::kernel_println!("Hello Audience!");
     STATUS_SUCCESS
-
 }
 
 extern "system" fn DriverUnload(_driver: &mut DRIVER_OBJECT) {}
@@ -41,6 +40,3 @@ extern "system" fn DriverUnload(_driver: &mut DRIVER_OBJECT) {}
 fn panic(_info: &core::panic::PanicInfo) -> ! {
     loop {}
 }
-
-
-

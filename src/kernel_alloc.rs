@@ -1,9 +1,9 @@
 //it must be defined in lib.rs
 //#![feature(alloc_error_handler)]
+use crate::{ExAllocatePool, ExFreePool, POOL_TYPE};
 #[allow(unused_imports)]
 use alloc::alloc::handle_alloc_error;
 use core::alloc::{GlobalAlloc, Layout};
-use crate::{ExFreePool, ExAllocatePool, POOL_TYPE};
 
 pub struct KernelAlloc;
 
